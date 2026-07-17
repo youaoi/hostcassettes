@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- 左上(#FFE7A7) → 右下(#C19119) の135°線形グラデーション -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#FFE7A7"/>
+      <stop offset="50%"  stop-color="#FFCC48"/>
+      <stop offset="100%" stop-color="#C19119"/>
+    </linearGradient>
+  </defs>
+
+  <!-- macOS アイコン準拠のコーナー半径 (rx ≈ 22.5% of 128 ≈ 22px) -->
+  <rect width="128" height="128" rx="22" ry="22" fill="url(#bg-gradient)"/>
+</svg>

@@ -23,30 +23,40 @@ struct AboutBoxView: View {
                     Spacer()
                         .frame(height: 2)
 
-                    Text("Based on Gas Mask by Siim Raud")
+                    Text("Developed by Yuki AOI")
                         .font(.system(size: 11))
-
-                    HStack(spacing: 4) {
-                        Text("E-mail:")
-                            .font(.system(size: 11))
-                        Text(verbatim: "siim@clockwise.ee")
-                            .font(.system(size: 11))
-                            .strikethrough()
-                            .foregroundColor(.secondary)
-                    }
 
                     LabeledLink(
                         label: "Home Page:",
-                        text: "github.com/dmm-aoi-yuki/hostcassettes",
-                        destination: URL(string: "https://github.com/dmm-aoi-yuki/hostcassettes")!
+                        text: "github.com/youaoi/hostcassettes",
+                        destination: URL(string: "https://github.com/youaoi/hostcassettes")!
+                    )
+
+                    Spacer()
+                        .frame(height: 2)
+
+                    Text("Based on Gas Mask by Siim Raud")
+                        .font(.system(size: 11))
+                        .foregroundColor(.secondary)
+
+                    LabeledLink(
+                        label: "Original:",
+                        text: "github.com/2ndalpha/gasmask",
+                        destination: URL(string: "https://github.com/2ndalpha/gasmask")!
                     )
                 }
             }
 
-            Text("Copyright © 2009–2026 Clockwise.\nAll rights reserved.")
-                .font(.system(size: 10))
-                .multilineTextAlignment(.center)
-                .padding(.top, 4)
+            VStack(spacing: 2) {
+                Text("Original: Copyright © 2009–2026 Clockwise Software")
+                    .font(.system(size: 10))
+                Text("Modifications: Copyright © 2026 Yuki AOI")
+                    .font(.system(size: 10))
+                Text("All rights reserved.")
+                    .font(.system(size: 10))
+            }
+            .multilineTextAlignment(.center)
+            .padding(.top, 4)
         }
         .fixedSize()
         .padding(20)

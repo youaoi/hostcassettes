@@ -17,7 +17,14 @@ argument-hint: 'e.g. "bump patch", "bump minor", "set version 1.0.0", "bump buil
 ## Sparkle Auto-Update
 
 Sparkle は `sparkle:version`（= `CFBundleVersion`）を比較してアップデート判定を行う。
-**バージョンを上げる際は必ず `CFBundleVersion` もインクリメントすること。** ビルド番号が同じだと、ユーザーにアップデートが配信されない。
+**バージョンを上げる際は必ず `CFBundleVersion` も更新すること。** ビルド番号が同じだと、ユーザーにアップデートが配信されない。
+
+### CFBundleVersion のルール
+
+| バンプ種別            | CFBundleVersion の扱い                          |
+| --------------------- | ----------------------------------------------- |
+| major / minor / patch | **1 にリセット**（新バージョン最初のビルド）    |
+| build only            | **+1 インクリメント**（同バージョンの再ビルド） |
 
 ## Procedure
 
@@ -39,12 +46,14 @@ Sparkle は `sparkle:version`（= `CFBundleVersion`）を比較してアップ�
 
 ### 3. Update Info.plist
 
-**両方を更新する:**
+**major / minor / patch の場合（両方を更新）:**
 
 1. `CFBundleShortVersionString` — 新しいマーケティングバージョンに変更
-2. `CFBundleVersion` — 必ずインクリメント（+1）
+2. `CFBundleVersion` — **1 にリセット**
 
-build only の場合は `CFBundleVersion` のみインクリメントする。
+**build only の場合（1つだけ更新）:**
+
+1. `CFBundleVersion` のみ **+1 インクリメント**（`CFBundleShortVersionString` は変更しない）
 
 ### 4. Verify no hardcoded versions
 
