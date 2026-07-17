@@ -1,5 +1,5 @@
 import XCTest
-@testable import Gas_Mask
+@testable import Host_Cassettes
 
 final class EditorWindowPresenterTests: XCTestCase {
 
@@ -17,7 +17,7 @@ final class EditorWindowPresenterTests: XCTestCase {
     }
 
     func testWindowTitle() {
-        XCTAssertEqual(window.title, "Gas Mask")
+        XCTAssertEqual(window.title, "Host Cassettes")
     }
 
     func testFrameAutosaveName() {

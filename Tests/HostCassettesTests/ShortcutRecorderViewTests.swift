@@ -1,6 +1,6 @@
 import XCTest
 import MASShortcut
-@testable import Gas_Mask
+@testable import Host_Cassettes
 
 /// Tests for MASShortcutView configuration matching what ShortcutRecorderView sets up.
 ///

@@ -1,7 +1,7 @@
 import XCTest
 import Combine
 import SwiftUI
-@testable import Gas_Mask
+@testable import Host_Cassettes
 
 final class HostsTextViewPerformanceTests: XCTestCase {
 

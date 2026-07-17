@@ -1,6 +1,6 @@
 import XCTest
 import MASShortcut
-@testable import Gas_Mask
+@testable import Host_Cassettes
 
 final class GlobalShortcutsTests: XCTestCase {
 
