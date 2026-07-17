@@ -164,7 +164,7 @@
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8D1107260486CEB800E47090;
-			remoteInfo = "Gas Mask";
+			remoteInfo = "Host Cassettes";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -189,7 +189,7 @@
 		A10000040000000000001001 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		A10000050000000000001001 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A10000060000000000001001 /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		256AC3F00F4B6AF500CF3369 /* Gas_Mask_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gas_Mask_Prefix.pch; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* Host_Cassettes_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Host_Cassettes_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -330,8 +330,8 @@
 		682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorWindowPresenter.swift; path = Source/Swift/EditorWindowPresenter.swift; sourceTree = "<group>"; };
 		7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorView.swift; path = Source/Swift/EditorView.swift; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Gas Mask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gas Mask.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA000002000000000000AAAA /* GasMask-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GasMask-Bridging-Header.h"; path = "Source/Swift/GasMask-Bridging-Header.h"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Host Cassettes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Host Cassettes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA000002000000000000AAAA /* HostCassettes-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HostCassettes-Bridging-Header.h"; path = "Source/Swift/HostCassettes-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA000003000000000000AAAA /* URLValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLValidator.swift; path = Source/Swift/URLValidator.swift; sourceTree = "<group>"; };
 		AA000005000000000000AAAA /* NetworkStatusObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkStatusObserver.swift; path = Source/Swift/NetworkStatusObserver.swift; sourceTree = "<group>"; };
 		AA000007000000000000AAAA /* URLSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSheetView.swift; path = Source/Swift/URLSheetView.swift; sourceTree = "<group>"; };
@@ -365,7 +365,7 @@
 		CC2B3C4D5E6F000100000013 /* AbstractHostsControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractHostsControllerTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000014 /* ApplicationControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationControllerTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000016 /* HostsMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsMenuTests.m; sourceTree = "<group>"; };
-		CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gas Mask Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC2B3C4D5E6F000100000020 /* Host Cassettes Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Host Cassettes Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorToolbar.swift; path = Source/Swift/EditorToolbar.swift; sourceTree = "<group>"; };
 		DD000001000000000000DD01 /* GlobalShortcutsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalShortcutsTests.swift; sourceTree = "<group>"; };
 		DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutRecorderViewTests.swift; sourceTree = "<group>"; };
@@ -449,8 +449,8 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */,
-				8D1107320486CEB800E47090 /* Gas Mask.app */,
+				CC2B3C4D5E6F000100000020 /* Host Cassettes Tests.xctest */,
+				8D1107320486CEB800E47090 /* Host Cassettes.app */,
 				3579F0CD1114B7B900123416 /* Launcher.app */,
 			);
 			name = Products;
@@ -477,14 +477,14 @@
 				35FC65A71114B29A00BD18C3 /* Cocoa.framework */,
 				35FBCA501223181000860FDA /* libicucore.dylib */,
 			);
-			name = "Gas Mask";
+			name = "Host Cassettes";
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
 				35FC65991114B12600BD18C3 /* launcher.m */,
-				256AC3F00F4B6AF500CF3369 /* Gas_Mask_Prefix.pch */,
+				256AC3F00F4B6AF500CF3369 /* Host_Cassettes_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -765,7 +765,7 @@
 		AA000001000000000000AAAA /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				AA000002000000000000AAAA /* GasMask-Bridging-Header.h */,
+				AA000002000000000000AAAA /* HostCassettes-Bridging-Header.h */,
 				CC000001000000000000CC01 /* GlobalShortcuts.swift */,
 				AA000003000000000000AAAA /* URLValidator.swift */,
 				AA000005000000000000AAAA /* NetworkStatusObserver.swift */,
@@ -806,13 +806,13 @@
 		CC2B3C4D5E6F000100000030 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				CC2B3C4D5E6F000100000031 /* GasMaskTests */,
+				CC2B3C4D5E6F000100000031 /* HostCassettesTests */,
 			);
 			name = Tests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		CC2B3C4D5E6F000100000031 /* GasMaskTests */ = {
+		CC2B3C4D5E6F000100000031 /* HostCassettesTests */ = {
 			isa = PBXGroup;
 			children = (
 				AA00000B000000000000AAAA /* URLValidatorTests.swift */,
@@ -836,8 +836,8 @@
 				CC2B3C4D5E6F000100000016 /* HostsMenuTests.m */,
 				313D8BA99EC0C9F97C402B58 /* HostsDataStoreNotificationTests.swift */,
 			);
-			name = GasMaskTests;
-			path = GasMaskTests;
+			name = HostCassettesTests;
+			path = HostCassettesTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -860,9 +860,9 @@
 			productReference = 3579F0CD1114B7B900123416 /* Launcher.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D1107260486CEB800E47090 /* Gas Mask */ = {
+		8D1107260486CEB800E47090 /* Host Cassettes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Gas Mask" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Host Cassettes" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -874,19 +874,19 @@
 			dependencies = (
 				353D18A11114C067005C4E54 /* PBXTargetDependency */,
 			);
-			name = "Gas Mask";
+			name = "Host Cassettes";
 			packageProductDependencies = (
 				351416CE28C3A7B80093A452 /* Sparkle */,
 				AA1B2C3D4E5F000200000001 /* MASShortcut */,
 			);
 			productInstallPath = "$(HOME)/Applications";
-			productName = "Gas Mask";
-			productReference = 8D1107320486CEB800E47090 /* Gas Mask.app */;
+			productName = "Host Cassettes";
+			productReference = 8D1107320486CEB800E47090 /* Host Cassettes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CC2B3C4D5E6F000100000001 /* Gas Mask Tests */ = {
+		CC2B3C4D5E6F000100000001 /* Host Cassettes Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC2B3C4D5E6F000100000004 /* Build configuration list for PBXNativeTarget "Gas Mask Tests" */;
+			buildConfigurationList = CC2B3C4D5E6F000100000004 /* Build configuration list for PBXNativeTarget "Host Cassettes Tests" */;
 			buildPhases = (
 				CC2B3C4D5E6F000100000005 /* Sources */,
 				CC2B3C4D5E6F000100000006 /* Frameworks */,
@@ -897,9 +897,9 @@
 			dependencies = (
 				CC2B3C4D5E6F000100000051 /* PBXTargetDependency */,
 			);
-			name = "Gas Mask Tests";
-			productName = "Gas Mask Tests";
-			productReference = CC2B3C4D5E6F000100000020 /* Gas Mask Tests.xctest */;
+			name = "Host Cassettes Tests";
+			productName = "Host Cassettes Tests";
+			productReference = CC2B3C4D5E6F000100000020 /* Host Cassettes Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -913,7 +913,7 @@
 				TargetAttributes = {
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Gas Mask" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Host Cassettes" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
@@ -931,8 +931,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Gas Mask */,
-				CC2B3C4D5E6F000100000001 /* Gas Mask Tests */,
+				8D1107260486CEB800E47090 /* Host Cassettes */,
+				CC2B3C4D5E6F000100000001 /* Host Cassettes Tests */,
 				3579F0CC1114B7B900123416 /* Launcher */,
 			);
 		};
@@ -1125,7 +1125,7 @@
 		};
 		CC2B3C4D5E6F000100000051 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D1107260486CEB800E47090 /* Gas Mask */;
+			target = 8D1107260486CEB800E47090 /* Host Cassettes */;
 			targetProxy = CC2B3C4D5E6F000100000050 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1190,7 +1190,7 @@
 					"-framework",
 					AppKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.launcher;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.okasy.hostcassettes.launcher;
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
 			};
@@ -1224,7 +1224,7 @@
 					"-framework",
 					AppKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.launcher;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.okasy.hostcassettes.launcher;
 				PRODUCT_NAME = Launcher;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
@@ -1247,7 +1247,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
+				GCC_PREFIX_HEADER = Host_Cassettes_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1255,10 +1255,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
-				PRODUCT_NAME = "Gas Mask";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.okasy.hostcassettes;
+				PRODUCT_NAME = "Host Cassettes";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "Source/Swift/GasMask-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Swift/HostCassettes-Bridging-Header.h";
 				SWIFT_VERSION = 5.9;
 			};
 			name = Debug;
@@ -1278,7 +1278,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
+				GCC_PREFIX_HEADER = Host_Cassettes_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1286,10 +1286,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask;
-				PRODUCT_NAME = "Gas Mask";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.okasy.hostcassettes;
+				PRODUCT_NAME = "Host Cassettes";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "Source/Swift/GasMask-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Swift/HostCassettes-Bridging-Header.h";
 				SWIFT_VERSION = 5.9;
 			};
 			name = Release;
@@ -1374,13 +1374,13 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
+				GCC_PREFIX_HEADER = Host_Cassettes_Prefix.pch;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.tests;
-				PRODUCT_NAME = "Gas Mask Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.okasy.hostcassettes.tests;
+				PRODUCT_NAME = "Host Cassettes Tests";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas Mask.app/Contents/MacOS/Gas Mask";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Host Cassettes.app/Contents/MacOS/Host Cassettes";
 			};
 			name = Debug;
 		};
@@ -1397,13 +1397,13 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gas_Mask_Prefix.pch;
+				GCC_PREFIX_HEADER = Host_Cassettes_Prefix.pch;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ee.clockwise.gmask.tests;
-				PRODUCT_NAME = "Gas Mask Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.okasy.hostcassettes.tests;
+				PRODUCT_NAME = "Host Cassettes Tests";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas Mask.app/Contents/MacOS/Gas Mask";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Host Cassettes.app/Contents/MacOS/Host Cassettes";
 			};
 			name = Release;
 		};
@@ -1419,7 +1419,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Gas Mask" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Host Cassettes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -1428,7 +1428,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Gas Mask" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Host Cassettes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
@@ -1437,7 +1437,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC2B3C4D5E6F000100000004 /* Build configuration list for PBXNativeTarget "Gas Mask Tests" */ = {
+		CC2B3C4D5E6F000100000004 /* Build configuration list for PBXNativeTarget "Host Cassettes Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC2B3C4D5E6F000100000002 /* Debug */,

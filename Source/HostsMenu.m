@@ -196,7 +196,7 @@
 	
 	[self addItem:[NSMenuItem separatorItem]];
 	
-	item = [[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Quit Gas Mask", @"Menu item to quit application") action:NULL keyEquivalent:@""];
+	item = [[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Quit Host Cassettes", @"Menu item to quit application") action:NULL keyEquivalent:@""];
 	[item setAction:@selector(quit:)];
 	[item setTarget:controller];
 	[self addItem:item];

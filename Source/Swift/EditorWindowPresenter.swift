@@ -18,7 +18,7 @@ import SwiftUI
         let hostingController = NSHostingController(rootView: editorView)
 
         let window = NSWindow(contentViewController: hostingController)
-        window.title = "Gas Mask"
+        window.title = "Host Cassettes"
         window.styleMask = [.titled, .closable, .miniaturizable, .resizable]
         window.setContentSize(NSSize(width: 619, height: 479))
         window.minSize = NSSize(width: 400, height: 400)

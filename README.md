@@ -1,10 +1,10 @@
-# Gas Mask
+# Host Cassettes
 
-[![Build Status](https://github.com/dmm-aoi-yuki/gasmask/actions/workflows/push.yml/badge.svg)](https://github.com/dmm-aoi-yuki/gasmask/actions/workflows/push.yml)
-[![Latest Release](https://img.shields.io/github/v/release/dmm-aoi-yuki/gasmask?display_name=tag)](https://github.com/dmm-aoi-yuki/gasmask/releases)
+[![Build Status](https://github.com/youaoi/hostcassettes/actions/workflows/push.yml/badge.svg)](https://github.com/youaoi/hostcassettes/actions/workflows/push.yml)
+[![Latest Release](https://img.shields.io/github/v/release/youaoi/hostcassettes?display_name=tag)](https://github.com/youaoi/hostcassettes/releases)
 [![License: GPL v2 or later](https://img.shields.io/badge/license-GPL%20v2%20or%20later-blue.svg)](LICENSE)
 
-Gas Mask は、macOS 向けのシンプルな hosts ファイルマネージャーです。
+Host Cassettes (based on Gas Mask) は、macOS 向けのシンプルな hosts ファイルマネージャーです。
 ローカル hosts の編集、リモート hosts の同期、複数 hosts の切り替えを GUI で扱えます。
 
 このリポジトリは、更新が止まっている本家 Gas Mask をベースに Apple Silicon と現行 Xcode 向けの保守を続ける fork です。
@@ -22,15 +22,24 @@ Gas Mask は、macOS 向けのシンプルな hosts ファイルマネージャ�
 
 ## 概要
 
-Gas Mask は `/etc/hosts` を監視し、選択中の hosts ファイルの内容をシステムへ反映します。
+Host Cassettes は `/etc/hosts` を監視し、選択中の hosts ファイルの内容をシステムへ反映します。
 
 - ローカル hosts ファイルの編集
 - リモート hosts ファイルの定期同期
 - 複数の hosts ファイルの素早い切り替え
 - 複数ソースを束ねる Combined hosts の利用
 
-カスタム hosts ファイルは `~/Library/Gas Mask` に保存されます。
-ログは `~/Library/Logs/Gas Mask.log` に出力されます。問題報告時はこのログを確認すると原因を追いやすくなります。
+カスタム hosts ファイルは `~/Library/Host Cassettes` に保存されます。
+ログは `~/Library/Logs/Host Cassettes.log` に出力されます。問題報告時はこのログを確認すると原因を追いやすくなります。
+
+### Gas Mask からの移行
+
+Host Cassettes は起動時に `~/Library/Gas Mask` を自動検出し、以下のように処理します。
+
+- `~/Library/Host Cassettes` が存在しない場合: `~/Library/Gas Mask` をそのまま移動します。
+- `~/Library/Host Cassettes` が既に存在する場合: `~/Library/Gas Mask` 内の Local / Remote / Combined ファイルのうち、Host Cassettes 側に存在しないものだけをコピーして取り込みます（既存ファイルは上書きしません）。
+
+いずれの場合も、有効化されていた hosts ファイルのパス設定が Gas Mask のパスを指している場合は Host Cassettes のパスへ自動更新されます。
 
 ## 動作環境
 
@@ -38,7 +47,7 @@ Gas Mask は `/etc/hosts` を監視し、選択中の hosts ファイルの内�
 
 ## ダウンロード
 
-- 最新版は [GitHub Releases](https://github.com/dmm-aoi-yuki/gasmask/releases) から入手してください。
+- 最新版は [GitHub Releases](https://github.com/youaoi/hostcassettes/releases) から入手してください。
 - 現在の arm64 公開版は `0.8.8-arm64.2` です。
 
 ## インストール
@@ -55,16 +64,16 @@ Gas Mask は `/etc/hosts` を監視し、選択中の hosts ファイルの内�
 **方法 1: ターミナルで quarantine 属性を削除する（推奨）**
 
 ```bash
-xattr -cr /Applications/Gas\ Mask.app
+xattr -cr /Applications/Host\ Cassettes.app
 ```
 
 **方法 2: 右クリックから開く**
 
-Finder で `Gas Mask.app` を右クリック（または Control+クリック）→「開く」を選択します。
+Finder で `Host Cassettes.app` を右クリック（または Control+クリック）→「開く」を選択します。
 
 ## 使い方
 
-Gas Mask は通常バックグラウンドで動作し、メニューバーにアイコンを表示します。メニューバーからメイン画面を開いたり、アクティブな hosts ファイルを素早く切り替えたりできます。
+Host Cassettes は通常バックグラウンドで動作し、メニューバーにアイコンを表示します。メニューバーからメイン画面を開いたり、アクティブな hosts ファイルを素早く切り替えたりできます。
 
 メイン画面は、ツールバー、左側の hosts ファイル一覧、右側のエディタで構成されます。初期状態では `Local` 配下に `Original file` があり、これは元の `/etc/hosts` のコピーです。
 
@@ -99,7 +108,7 @@ Gas Mask は通常バックグラウンドで動作し、メニューバーに�
 
 ## ビルド
 
-Gas Mask のビルドには Xcode 15 以降が必要です。
+Host Cassettes のビルドには Xcode 15 以降が必要です。
 
 - Apple Silicon 向け標準ビルド: `./build.sh`
 - Apple Silicon 向け互換エイリアス: `./build-arm.sh`

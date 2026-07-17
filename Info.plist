@@ -19,7 +19,7 @@
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>ee.clockwise.gasmask.hst</string>
+				<string>jp.okasy.hostcassettes.hst</string>
 			</array>
 			<key>LSTypeIsPackage</key>
 			<true/>
@@ -30,7 +30,7 @@
 	<key>CFBundleHelpBookFolder</key>
 	<string>Help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>Gas Mask Help</string>
+	<string>Host Cassettes Help</string>
 	<key>CFBundleIconFile</key>
 	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
@@ -94,7 +94,7 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://dmm-aoi-yuki.github.io/gasmask/appcast.xml</string>
+	<string>https://dmm-aoi-yuki.github.io/hostcassettes/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>sparkle_dsa_pub.pem</string>
 	<key>SUPublicEDKey</key>
@@ -113,7 +113,7 @@
 			<key>UTTypeDescription</key>
 			<string>Hosts File</string>
 			<key>UTTypeIdentifier</key>
-			<string>ee.clockwise.gasmask.hst</string>
+			<string>jp.okasy.hostcassettes.hst</string>
 			<key>UTTypeReferenceURL</key>
 			<string>http://www.clockwise.ee</string>
 			<key>UTTypeTagSpecification</key>

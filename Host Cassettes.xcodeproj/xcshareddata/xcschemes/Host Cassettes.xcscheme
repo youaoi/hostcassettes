@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D1107260486CEB800E47090"
-               BuildableName = "Gas Mask.app"
-               BlueprintName = "Gas Mask"
-               ReferencedContainer = "container:Gas Mask.xcodeproj">
+               BuildableName = "Host Cassettes.app"
+               BlueprintName = "Host Cassettes"
+               ReferencedContainer = "container:Host Cassettes.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC2B3C4D5E6F000100000001"
-               BuildableName = "Gas Mask Tests.xctest"
-               BlueprintName = "Gas Mask Tests"
-               ReferencedContainer = "container:Gas Mask.xcodeproj">
+               BuildableName = "Host Cassettes Tests.xctest"
+               BlueprintName = "Host Cassettes Tests"
+               ReferencedContainer = "container:Host Cassettes.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D1107260486CEB800E47090"
-            BuildableName = "Gas Mask.app"
-            BlueprintName = "Gas Mask"
-            ReferencedContainer = "container:Gas Mask.xcodeproj">
+            BuildableName = "Host Cassettes.app"
+            BlueprintName = "Host Cassettes"
+            ReferencedContainer = "container:Host Cassettes.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -56,9 +56,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC2B3C4D5E6F000100000001"
-               BuildableName = "Gas Mask Tests.xctest"
-               BlueprintName = "Gas Mask Tests"
-               ReferencedContainer = "container:Gas Mask.xcodeproj">
+               BuildableName = "Host Cassettes Tests.xctest"
+               BlueprintName = "Host Cassettes Tests"
+               ReferencedContainer = "container:Host Cassettes.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D1107260486CEB800E47090"
-            BuildableName = "Gas Mask.app"
-            BlueprintName = "Gas Mask"
-            ReferencedContainer = "container:Gas Mask.xcodeproj">
+            BuildableName = "Host Cassettes.app"
+            BlueprintName = "Host Cassettes"
+            ReferencedContainer = "container:Host Cassettes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D1107260486CEB800E47090"
-            BuildableName = "Gas Mask.app"
-            BlueprintName = "Gas Mask"
-            ReferencedContainer = "container:Gas Mask.xcodeproj">
+            BuildableName = "Host Cassettes.app"
+            BlueprintName = "Host Cassettes"
+            ReferencedContainer = "container:Host Cassettes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

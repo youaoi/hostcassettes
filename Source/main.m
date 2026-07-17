@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	@autoreleasepool {
         [Logger setup];
 	
-        logDebug(@"Starting Gas Mask %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey]);
+        logDebug(@"Starting Host Cassettes %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey]);
 
         [[Network defaultInstance] startListeningForChanges];
 	

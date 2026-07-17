@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-project="Gas Mask.xcodeproj"
-scheme="Gas Mask"
+project="Host Cassettes.xcodeproj"
+scheme="Host Cassettes"
 archs="${ARCHS:-arm64}"
 configuration="${CONFIGURATION:-Debug}"
 

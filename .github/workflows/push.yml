@@ -27,7 +27,7 @@ jobs:
           xcode-version: ${{ matrix.xcode }}
 
       - name: Resolve package dependencies
-        run: xcodebuild -resolvePackageDependencies -project "Gas Mask.xcodeproj" -scheme "Gas Mask"
+        run: xcodebuild -resolvePackageDependencies -project "Host Cassettes.xcodeproj" -scheme "Host Cassettes"
 
       - name: Build arm64 app
         run: ./build.sh
@@ -61,7 +61,7 @@ jobs:
           xcode-version: ${{ matrix.xcode }}
 
       - name: Resolve package dependencies
-        run: xcodebuild -resolvePackageDependencies -project "Gas Mask.xcodeproj" -scheme "Gas Mask"
+        run: xcodebuild -resolvePackageDependencies -project "Host Cassettes.xcodeproj" -scheme "Host Cassettes"
 
       - name: Test
-        run: xcodebuild test -project "Gas Mask.xcodeproj" -scheme "Gas Mask" -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        run: xcodebuild test -project "Host Cassettes.xcodeproj" -scheme "Host Cassettes" -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO

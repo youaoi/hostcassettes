@@ -23,7 +23,7 @@
 #import "Preferences.h"
 #import "HostsMenu.h"
 #import "PrivilegedActions.h"
-#import "Gas_Mask-Swift.h"
+#import "Host_Cassettes-Swift.h"
 #import "LocalHostsController.h"
 #import "RemoteHostsController.h"
 #import "NotificationHelper.h"
@@ -349,7 +349,7 @@ static BOOL shouldConfigureSparkleUpdater(void)
 - (void)notifyOfFileRestored:(NSNotification *)note
 {    
     [NotificationHelper notify:NSLocalizedString(@"Hosts File Restored", @"Notification title when hosts file is restored")
-                       message:NSLocalizedString(@"External application has changed the hosts file.\nGas Mask restored previous state.", @"Notification message when hosts file is restored")];
+                       message:NSLocalizedString(@"External application has changed the hosts file.\nHost Cassettes restored previous state.", @"Notification message when hosts file is restored")];
 }
 
 - (void)notifyHostsChange:(Hosts*)hosts

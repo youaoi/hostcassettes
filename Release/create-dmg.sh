@@ -4,9 +4,9 @@ set -eu
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
 OUTPUT_DIR=${OUTPUT_DIR:-"$SCRIPT_DIR/../dist"}
-VOLUME_NAME=${VOLUME_NAME:-"Gas Mask"}
-APP_PATH=${APP_PATH:-"$SCRIPT_DIR/../build/Release/Gas Mask.app"}
-DMG_STEM=${DMG_STEM:-"Gas Mask"}
+VOLUME_NAME=${VOLUME_NAME:-"Host Cassettes"}
+APP_PATH=${APP_PATH:-"$SCRIPT_DIR/../build/Release/Host Cassettes.app"}
+DMG_STEM=${DMG_STEM:-"Host Cassettes"}
 SRC="$OUTPUT_DIR/dmg_src"
 DMG_TEMP_NAME="$OUTPUT_DIR/$DMG_STEM.temp.dmg"
 DMG_NAME="$OUTPUT_DIR/${DMG_NAME:-$DMG_STEM.dmg}"

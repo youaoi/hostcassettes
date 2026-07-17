@@ -16,7 +16,7 @@ import MASShortcut
         ]
 
         let nc = NotificationCenter.default
-        // Notification names from Gas_Mask_Prefix.pch lines 42–44 (not importable in Swift)
+        // Notification names from Host_Cassettes_Prefix.pch lines 42–44 (not importable in Swift)
         binder.bindShortcut(withDefaultsKey: ActivatePreviousFilePrefKey) {
             nc.post(name: .init("activatePreviousFileNotification"), object: nil)
         }

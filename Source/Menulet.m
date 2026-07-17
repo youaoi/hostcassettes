@@ -24,10 +24,10 @@
 #import "HostsMenu.h"
 #import "Preferences.h"
 
-#if __has_include("Gas_Mask-Swift.h")
-#import "Gas_Mask-Swift.h"
+#if __has_include("Host_Cassettes-Swift.h")
+#import "Host_Cassettes-Swift.h"
 #else
-#import "Gas Mask-Swift.h"
+#import "Host Cassettes-Swift.h"
 #endif
 
 @implementation Menulet
@@ -42,7 +42,7 @@
     [[statusItem button] setAction:@selector(showMenu:)];
     [[statusItem button] setImage:icon];
     [[statusItem button] setTitle:@""];
-    [[statusItem button] setToolTip:NSLocalizedString(@"Gas Mask", @"Status bar tooltip")];
+    [[statusItem button] setToolTip:NSLocalizedString(@"Host Cassettes", @"Status bar tooltip")];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults addObserver:self

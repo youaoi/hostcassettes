@@ -20,6 +20,7 @@
 
 @interface FileUtil : NSObject
 
++ (void)migrateFromGasMaskIfNeeded;
 + (NSString*)dataDirectory;
 + (NSString*)localHostFilesDirectory;
 + (NSString*)remoteHostFilesDirectory;

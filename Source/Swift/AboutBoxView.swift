@@ -11,10 +11,10 @@ struct AboutBoxView: View {
                 Image("AboutIcon")
                     .resizable()
                     .frame(width: 96, height: 96)
-                    .accessibilityLabel("Gas Mask application icon")
+                    .accessibilityLabel("Host Cassettes application icon")
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Gas Mask")
+                    Text("Host Cassettes")
                         .font(.system(size: 18))
 
                     Text("Version \(version)")
@@ -37,8 +37,8 @@ struct AboutBoxView: View {
 
                     LabeledLink(
                         label: "Home Page:",
-                        text: "github.com/dmm-aoi-yuki/gasmask",
-                        destination: URL(string: "https://github.com/dmm-aoi-yuki/gasmask")!
+                        text: "github.com/dmm-aoi-yuki/hostcassettes",
+                        destination: URL(string: "https://github.com/dmm-aoi-yuki/hostcassettes")!
                     )
                 }
             }

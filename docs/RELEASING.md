@@ -1,4 +1,4 @@
-# Releasing Gas Mask
+# Releasing Host Cassettes
 
 この fork は GitHub Releases を配布の基準にし、Sparkle による自動アップデートを GitHub Pages 経由で配信します。
 
@@ -8,7 +8,7 @@
 2. `Info.plist` のバージョンを更新する。
    - `CFBundleShortVersionString`: マーケティングバージョン（例: `0.8.8`）。機能追加・バグ修正でユーザーに見せたい番号を変更する。
    - `CFBundleVersion`: ビルド番号（整数、例: `3`）。**リリースごとに必ずインクリメント**する。Sparkle はこの値で更新を検知する。
-3. `./build.sh` と `xcodebuild test -project "Gas Mask.xcodeproj" -scheme "Gas Mask" -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO` が通ることを確認する。
+3. `./build.sh` と `xcodebuild test -project "Host Cassettes.xcodeproj" -scheme "Host Cassettes" -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO` が通ることを確認する。
 4. リリースノートを `docs/release-notes/` に用意する。
 
 ## ローカルで配布物を作る
@@ -45,7 +45,7 @@ git push origin v0.8.7-arm64.1
 
 Sparkle 自動更新は有効化済みです。
 
-- **appcast URL**: `https://dmm-aoi-yuki.github.io/gasmask/appcast.xml`
+- **appcast URL**: `https://dmm-aoi-yuki.github.io/hostcassettes/appcast.xml`
 - **EdDSA 公開鍵**: `Info.plist` の `SUPublicEDKey` に設定済み
 - **秘密鍵**: Keychain に保存済み。CI 用に `SPARKLE_EDDSA_KEY` GitHub Secret に登録が必要
 

@@ -5,32 +5,40 @@
       "id": "update-app-icon",
       "section": "Assets",
       "name": "Update App Icon",
-      "command": "./update-app-icon.sh",
       "cwd": "${workspaceFolder}",
       "confirmBeforeRun": true,
-      "description": "Regenerate AppIcon PNG assets from the source SVG."
+      "description": "Regenerate AppIcon PNG assets from the source SVG.",
+      "commands": [
+        "./update-app-icon.sh"
+      ]
     },
     {
       "section": "Release",
       "name": "package",
-      "command": "CONFIGURATION=Release ARCHS=arm64 ./package-release.sh",
       "confirmBeforeRun": true,
-      "id": "mo879oke-yfpl219"
+      "id": "mo879oke-yfpl219",
+      "commands": [
+        "CONFIGURATION=Release ARCHS=arm64 ./package-release.sh"
+      ]
     },
     {
       "section": "Debug",
       "name": "自動テスト",
-      "command": "xcodebuild -project 'Gas Mask.xcodeproj' -scheme 'Gas Mask' -configuration Debug -destination 'platform=macOS' ARCHS=arm64 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO test",
       "confirmBeforeRun": true,
-      "id": "mob6pjvz-pc8s70z"
+      "id": "mob6pjvz-pc8s70z",
+      "commands": [
+        "xcodebuild -project 'Gas Mask.xcodeproj' -scheme 'Gas Mask' -configuration Debug -destination 'platform=macOS' ARCHS=arm64 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO test"
+      ]
     },
     {
       "section": "Debug",
       "name": "kill",
-      "command": "pkill -9 -f \"Gas Mask.app\"",
       "reuseTerminal": true,
       "confirmBeforeRun": true,
-      "id": "mochdkxs-m2hxe93"
+      "id": "mochdkxs-m2hxe93",
+      "commands": [
+        "pkill -9 -f \"Gas Mask.app\""
+      ]
     }
   ],
   "sections": [

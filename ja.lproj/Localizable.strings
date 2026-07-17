@@ -9,7 +9,7 @@
 "Show Editor Window" = "エディタを表示";
 "Preferences..." = "環境設定...";
 "Update Remote Files" = "リモートファイルを更新";
-"Quit Gas Mask" = "Gas Mask を終了";
+"Quit Host Cassettes" = "Host Cassettes を終了";
 "Apply Hosts Changes" = "Hosts変更を反映";
 "Chrome" = "Chrome";
 "Flush socket pools" = "[Flush socket pools]を実行";
@@ -17,17 +17,17 @@
 "Flush the DNS cache" = "DNSキャッシュをクリアします";
 
 /* Menulet - Status Bar */
-"Gas Mask" = "Gas Mask";
+"Host Cassettes" = "Host Cassettes";
 
 /* ApplicationController - Notifications */
 "Hosts File Restored" = "Hosts ファイルを復元しました";
-"External application has changed the hosts file.\nGas Mask restored previous state." = "外部アプリケーションが hosts ファイルを変更しました。\nGas Mask は以前の状態に復元しました。";
+"External application has changed the hosts file.\nHost Cassettes restored previous state." = "外部アプリケーションが hosts ファイルを変更しました。\nHost Cassettes は以前の状態に復元しました。";
 "Hosts File Activated" = "Hosts ファイルを有効化しました";
 
 /* StructureConverter - Version Migration */
-"Gas Mask needs to convert data from version 0.4.\n" = "Gas Mask はバージョン 0.4 のデータを変換する必要があります。\n";
+"Host Cassettes needs to convert data from version 0.4.\n" = "Host Cassettes はバージョン 0.4 のデータを変換する必要があります。\n";
 "Unable to Convert From Version 0.4" = "バージョン 0.4 からの変換に失敗しました";
-"Gas Mask is unable to convert data from version 0.4 without root privileges. Gas Mask is closing." = "管理者権限がないため、バージョン 0.4 のデータを変換できません。Gas Mask を終了します。";
+"Host Cassettes is unable to convert data from version 0.4 without root privileges. Host Cassettes is closing." = "管理者権限がないため、バージョン 0.4 のデータを変換できません。Host Cassettes を終了します。";
 
 /* HostsDownloader - Errors */
 "Failed to download the hosts file" = "hosts ファイルのダウンロードに失敗しました";
@@ -41,8 +41,8 @@
 "Hosts File Updated" = "Hosts ファイルを更新しました";
 
 /* AbstractHostsController - Authorization */
-"Gas Mask needs to restore your selected host file.\n" = "Gas Mask は選択された hosts ファイルを復元する必要があります。\n";
-"Gas Mask needs to modify system hosts file.\n" = "Gas Mask はシステムの hosts ファイルを変更する必要があります。\n";
+"Host Cassettes needs to restore your selected host file.\n" = "Host Cassettes は選択された hosts ファイルを復元する必要があります。\n";
+"Host Cassettes needs to modify system hosts file.\n" = "Host Cassettes はシステムの hosts ファイルを変更する必要があります。\n";
 
 /* AbstractHostsManager - Network Error */
 "Can't update hosts file because you are not connected to the Internet." = "インターネットに接続されていないため、hosts ファイルを更新できません。";

@@ -1,10 +1,10 @@
 ---
 name: versioning
-description: "Bump Gas Mask app version (major, minor, patch) or build number. Use when: bumping version, releasing a new version, incrementing build number, updating version strings, preparing a release."
+description: "Bump Host Cassettes app version (major, minor, patch) or build number. Use when: bumping version, releasing a new version, incrementing build number, updating version strings, preparing a release."
 argument-hint: 'e.g. "bump patch", "bump minor", "set version 1.0.0", "bump build"'
 ---
 
-# Gas Mask Versioning
+# Host Cassettes Versioning
 
 ## Version Architecture
 

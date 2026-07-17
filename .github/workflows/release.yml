@@ -22,7 +22,7 @@ jobs:
           xcode-version: "16.4"
 
       - name: Resolve package dependencies
-        run: xcodebuild -resolvePackageDependencies -project "Gas Mask.xcodeproj" -scheme "Gas Mask"
+        run: xcodebuild -resolvePackageDependencies -project "Host Cassettes.xcodeproj" -scheme "Host Cassettes"
 
       - name: Build release archive
         run: CONFIGURATION=Release ARCHS=arm64 ./package-release.sh
@@ -47,7 +47,7 @@ jobs:
           VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" Info.plist)
           BUILD=$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" Info.plist)
           ZIP_NAME=$(basename "$ZIP_FILE")
-          DOWNLOAD_URL="https://github.com/dmm-aoi-yuki/gasmask/releases/download/${TAG}/${ZIP_NAME}"
+          DOWNLOAD_URL="https://github.com/dmm-aoi-yuki/hostcassettes/releases/download/${TAG}/${ZIP_NAME}"
 
           # Parse edSignature and length from sign_update output
           ED_SIGNATURE=$(echo "$SPARKLE_SIGNATURE" | sed -n 's/.*sparkle:edSignature="\([^"]*\)".*/\1/p')
@@ -58,16 +58,16 @@ jobs:
           <?xml version="1.0" encoding="utf-8"?>
           <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
             <channel>
-              <title>Gas Mask</title>
-              <link>https://dmm-aoi-yuki.github.io/gasmask/appcast.xml</link>
-              <description>Gas Mask updates</description>
+              <title>Host Cassettes</title>
+              <link>https://dmm-aoi-yuki.github.io/hostcassettes/appcast.xml</link>
+              <description>Host Cassettes updates</description>
               <language>en</language>
           APPCAST_EOF
 
           # Fetch existing items from gh-pages if available
           EXISTING_ITEMS=""
           if git ls-remote --exit-code origin gh-pages > /dev/null 2>&1; then
-            EXISTING_ITEMS=$(curl -fsSL "https://dmm-aoi-yuki.github.io/gasmask/appcast.xml" \
+            EXISTING_ITEMS=$(curl -fsSL "https://dmm-aoi-yuki.github.io/hostcassettes/appcast.xml" \
               | sed -n '/<item>/,/<\/item>/p' 2>/dev/null || true)
           fi
 
@@ -105,7 +105,7 @@ jobs:
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gas-mask-release-assets
+          name: host-cassettes-release-assets
           path: dist/*
 
       - name: Publish GitHub release

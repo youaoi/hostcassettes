@@ -14,13 +14,13 @@
 "29.title" = "AMainMenu";
 
 /* Class = "NSMenuItem"; title = "Gas Mask"; ObjectID = "56"; */
-"56.title" = "Gas Mask";
+"56.title" = "Host Cassettes";
 
 /* Class = "NSMenu"; title = "Gas Mask"; ObjectID = "57"; */
-"57.title" = "Gas Mask";
+"57.title" = "Host Cassettes";
 
 /* Class = "NSMenuItem"; title = "About Gas Mask"; ObjectID = "58"; */
-"58.title" = "Gas Mask について";
+"58.title" = "Host Cassettes について";
 
 /* Class = "NSMenuItem"; title = "Open…"; ObjectID = "72"; */
 "72.title" = "開く…";
@@ -47,10 +47,10 @@
 "131.title" = "サービス";
 
 /* Class = "NSMenuItem"; title = "Hide Gas Mask"; ObjectID = "134"; */
-"134.title" = "Gas Mask を隠す";
+"134.title" = "Host Cassettes を隠す";
 
 /* Class = "NSMenuItem"; title = "Quit Gas Mask"; ObjectID = "136"; */
-"136.title" = "Gas Mask を終了";
+"136.title" = "Host Cassettes を終了";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
 "145.title" = "ほかを隠す";
@@ -179,7 +179,7 @@
 "491.title" = "ヘルプ";
 
 /* Class = "NSMenuItem"; title = "Gas Mask Help"; ObjectID = "492"; */
-"492.title" = "Gas Mask ヘルプ";
+"492.title" = "Host Cassettes ヘルプ";
 
 /* Class = "NSMenuItem"; title = "Remove"; ObjectID = "547"; */
 "547.title" = "削除";

@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 // MARK: - Notification Names
-// These are defined as #define macros in Gas_Mask_Prefix.pch, which Swift cannot import.
+// These are defined as #define macros in Host_Cassettes_Prefix.pch, which Swift cannot import.
 // Mirror them here as NSNotification.Name constants.
 
 extension NSNotification.Name {

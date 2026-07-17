@@ -9,7 +9,7 @@
 "Show Editor Window" = "Show Editor Window";
 "Preferences..." = "Preferences...";
 "Update Remote Files" = "Update Remote Files";
-"Quit Gas Mask" = "Quit Gas Mask";
+"Quit Host Cassettes" = "Quit Host Cassettes";
 "Apply Hosts Changes" = "Apply Hosts Changes";
 "Chrome" = "Chrome";
 "Flush socket pools" = "Run [Flush socket pools]";
@@ -17,17 +17,17 @@
 "Flush the DNS cache" = "Flush the DNS cache";
 
 /* Menulet - Status Bar */
-"Gas Mask" = "Gas Mask";
+"Host Cassettes" = "Host Cassettes";
 
 /* ApplicationController - Notifications */
 "Hosts File Restored" = "Hosts File Restored";
-"External application has changed the hosts file.\nGas Mask restored previous state." = "External application has changed the hosts file.\nGas Mask restored previous state.";
+"External application has changed the hosts file.\nHost Cassettes restored previous state." = "External application has changed the hosts file.\nHost Cassettes restored previous state.";
 "Hosts File Activated" = "Hosts File Activated";
 
 /* StructureConverter - Version Migration */
-"Gas Mask needs to convert data from version 0.4.\n" = "Gas Mask needs to convert data from version 0.4.\n";
+"Host Cassettes needs to convert data from version 0.4.\n" = "Host Cassettes needs to convert data from version 0.4.\n";
 "Unable to Convert From Version 0.4" = "Unable to Convert From Version 0.4";
-"Gas Mask is unable to convert data from version 0.4 without root privileges. Gas Mask is closing." = "Gas Mask is unable to convert data from version 0.4 without root privileges. Gas Mask is closing.";
+"Host Cassettes is unable to convert data from version 0.4 without root privileges. Host Cassettes is closing." = "Host Cassettes is unable to convert data from version 0.4 without root privileges. Host Cassettes is closing.";
 
 /* HostsDownloader - Errors */
 "Failed to download the hosts file" = "Failed to download the hosts file";
@@ -41,8 +41,8 @@
 "Hosts File Updated" = "Hosts File Updated";
 
 /* AbstractHostsController - Authorization */
-"Gas Mask needs to restore your selected host file.\n" = "Gas Mask needs to restore your selected host file.\n";
-"Gas Mask needs to modify system hosts file.\n" = "Gas Mask needs to modify system hosts file.\n";
+"Host Cassettes needs to restore your selected host file.\n" = "Host Cassettes needs to restore your selected host file.\n";
+"Host Cassettes needs to modify system hosts file.\n" = "Host Cassettes needs to modify system hosts file.\n";
 
 /* AbstractHostsManager - Network Error */
 "Can't update hosts file because you are not connected to the Internet." = "Can't update hosts file because you are not connected to the Internet.";
