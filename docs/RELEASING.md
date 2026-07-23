@@ -53,9 +53,13 @@ Sparkle 自動更新は有効化済みです。
 
 リポジトリの Settings → Secrets and variables → Actions に以下を登録する:
 
-| Secret 名           | 値                                                |
-| ------------------- | ------------------------------------------------- |
-| `SPARKLE_EDDSA_KEY` | `generate_keys -x` でエクスポートした秘密鍵の内容 |
+| Secret 名                   | 値                                                                    |
+| --------------------------- | --------------------------------------------------------------------- |
+| `SPARKLE_EDDSA_KEY`         | `generate_keys -x` でエクスポートした秘密鍵の内容                     |
+| `DEVELOPER_ID_P12_BASE64`   | Developer ID Application 証明書 + 秘密鍵を p12 で書き出し base64 encode した値 |
+| `DEVELOPER_ID_P12_PASSWORD` | 上記 p12 のパスワード                                                 |
+
+`DEVELOPER_ID_P12_BASE64` が未設定の場合、CI はアドホック署名でビルドし警告を出します。ローカルで Developer ID 署名・公証したバイナリを GitHub Release に上書きアップロードしてください。
 
 ### GitHub Pages の設定
 
