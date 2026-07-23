@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Gas Mask</title>
-    <link>https://dmm-aoi-yuki.github.io/gasmask/appcast.xml</link>
-    <description>Gas Mask updates</description>
+    <title>Host Cassettes</title>
+    <link>https://youaoi.github.io/hostcassettes/appcast.xml</link>
+    <description>Host Cassettes updates</description>
     <language>en</language>
+    <item>
+      <title>Version 0.9.1 (2)</title>
+      <pubDate>Thu, 23 Jul 2026 09:37:23 +0000</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.9.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/youaoi/hostcassettes/releases/download/v0.9.1-arm64.2/host_cassettes_0.9.1_arm64.zip"
+                 type="application/octet-stream"
+                 sparkle:edSignature="/VOBdnw2dMQ9io/xS2msyZaNwZVyUuP2tyo2P7nnYvODCi5/4ccPxwsgG5iltxFxeS0C/aupuoKo705FMST+Dw=="
+                 length="1429239" />
+    </item>
     <item>
       <title>Version 0.8.9 (4)</title>
       <pubDate>Fri, 01 May 2026 05:12:45 +0000</pubDate>
