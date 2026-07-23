@@ -45,7 +45,7 @@ git push origin v0.8.7-arm64.1
 
 Sparkle 自動更新は有効化済みです。
 
-- **appcast URL**: `https://dmm-aoi-yuki.github.io/hostcassettes/appcast.xml`
+- **appcast URL**: `https://youaoi.github.io/hostcassettes/appcast.xml`
 - **EdDSA 公開鍵**: `Info.plist` の `SUPublicEDKey` に設定済み
 - **秘密鍵**: Keychain に保存済み。CI 用に `SPARKLE_EDDSA_KEY` GitHub Secret に登録が必要
 
