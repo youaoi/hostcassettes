@@ -50,9 +50,7 @@ jobs:
             xcode: "16.0"
           - runner: macos-15
             xcode: "26.0.1"
-          - runner: macos-26
-            xcode: "26.3"
-            experimental: true
+          # macos-26/Xcode 26.3 はテスト実行が exit 65 でタイムアウトする既知問題のため除外
     steps:
       - uses: actions/checkout@v6
 
