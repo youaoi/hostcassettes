@@ -85,10 +85,18 @@ jobs:
           APPCAST_EOF
 
           # Fetch existing items from gh-pages if available
+          # youaoi/hostcassettes 以外（旧リポジトリ等）のエントリは除外する
           EXISTING_ITEMS=""
-          if git ls-remote --exit-code origin gh-pages > /dev/null 2>&1; then
+          if git ls-remote --exit-code origin gh-pages; then
             EXISTING_ITEMS=$(curl -fsSL "https://youaoi.github.io/hostcassettes/appcast.xml" \
-              | sed -n '/<item>/,/<\/item>/p' 2>/dev/null || true)
+              | python3 -c "
+import sys, re
+data = sys.stdin.read()
+items = re.findall(r'<item>.*?</item>', data, re.DOTALL)
+for item in items:
+    if 'youaoi/hostcassettes' in item:
+        print(item)
+" || true)
           fi
 
           cat >> appcast/appcast.xml << ITEM_EOF

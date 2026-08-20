@@ -7,7 +7,7 @@
 1. `README.md` のバッジとダウンロード案内が fork を向いていることを確認する。
 2. `Info.plist` のバージョンを更新する。
    - `CFBundleShortVersionString`: マーケティングバージョン（例: `0.8.8`）。機能追加・バグ修正でユーザーに見せたい番号を変更する。
-   - `CFBundleVersion`: ビルド番号（整数、例: `3`）。**リリースごとに必ずインクリメント**する。Sparkle はこの値で更新を検知する。
+   - `CFBundleVersion`: ビルド番号（整数、例: `5`）。**リリースごとに必ずインクリメント**する。Sparkle はこの値で更新を検知する。**絶対に減らしてはいけない**（マーケティングバージョンをリセットしても継続してカウントアップする）。現在の最大値は `5`（0.9.2-arm64.2 で設定）。
 3. `./build.sh` と `xcodebuild test -project "Host Cassettes.xcodeproj" -scheme "Host Cassettes" -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO` が通ることを確認する。
 4. リリースノートを `docs/release-notes/` に用意する。
 
