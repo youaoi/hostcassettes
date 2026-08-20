@@ -13,15 +13,15 @@ final class AboutBoxPresenterTests: XCTestCase {
     }
 
     override func tearDown() {
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        drainMainQueue(hops: 3)
         if let w = aboutWindow() { w.close() }
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
         super.tearDown()
     }
 
     func testShow_createsWindow() {
         AboutBoxPresenter.show()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.aboutWindow() != nil }
 
         let w = aboutWindow()
         XCTAssertNotNil(w, "An About box window should exist")
@@ -30,13 +30,13 @@ final class AboutBoxPresenterTests: XCTestCase {
 
     func testShow_reusesWindow() {
         AboutBoxPresenter.show()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.aboutWindow() != nil }
 
         let first = aboutWindow()
         XCTAssertNotNil(first)
 
         AboutBoxPresenter.show()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         let second = aboutWindow()
         XCTAssertTrue(first === second, "Should reuse the same window instance")
@@ -44,7 +44,7 @@ final class AboutBoxPresenterTests: XCTestCase {
 
     func testShow_windowStyleMask() {
         AboutBoxPresenter.show()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.aboutWindow() != nil }
 
         let w = aboutWindow()
         XCTAssertNotNil(w)
@@ -54,7 +54,7 @@ final class AboutBoxPresenterTests: XCTestCase {
 
     func testShow_windowIsNotReleasedWhenClosed() {
         AboutBoxPresenter.show()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.aboutWindow() != nil }
 
         let w = aboutWindow()
         XCTAssertNotNil(w)
@@ -63,7 +63,7 @@ final class AboutBoxPresenterTests: XCTestCase {
 
     func testScreenshot_aboutBox() throws {
         AboutBoxPresenter.show()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.aboutWindow() != nil }
         let w = try XCTUnwrap(aboutWindow())
 
         let view = try XCTUnwrap(w.contentView)

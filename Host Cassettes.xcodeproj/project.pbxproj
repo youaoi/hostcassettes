@@ -146,6 +146,7 @@
 		FF000002000000000000FF01 /* AboutBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000001000000000000FF01 /* AboutBoxView.swift */; };
 		FF000004000000000000FF01 /* AboutBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000003000000000000FF01 /* AboutBoxPresenter.swift */; };
 		FF000006000000000000FF01 /* AboutBoxPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */; };
+		FF000008000000000000FF01 /* XCTestCaseHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000007000000000000FF01 /* XCTestCaseHelpers.swift */; };
 		A10000010000000000001001 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000020000000000001001 /* Localizable.strings */; };
 		AB000002000000000000AB01 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000001000000000000AB01 /* IconPickerView.swift */; };
 		AB000004000000000000AB01 /* StatusBarIconStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000003000000000000AB01 /* StatusBarIconStore.swift */; };
@@ -373,6 +374,7 @@
 		FF000001000000000000FF01 /* AboutBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxView.swift; path = Source/Swift/AboutBoxView.swift; sourceTree = "<group>"; };
 		FF000003000000000000FF01 /* AboutBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutBoxPresenter.swift; path = Source/Swift/AboutBoxPresenter.swift; sourceTree = "<group>"; };
 		FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBoxPresenterTests.swift; sourceTree = "<group>"; };
+		FF000007000000000000FF01 /* XCTestCaseHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -828,6 +830,7 @@
 				DD000001000000000000DD01 /* GlobalShortcutsTests.swift */,
 				DD000003000000000000DD01 /* ShortcutRecorderViewTests.swift */,
 				FF000005000000000000FF01 /* AboutBoxPresenterTests.swift */,
+				FF000007000000000000FF01 /* XCTestCaseHelpers.swift */,
 				CC2B3C4D5E6F000100000010 /* NodeTests.m */,
 				CC2B3C4D5E6F000100000011 /* HostsTests.m */,
 				CC2B3C4D5E6F000100000012 /* HostsGroupTests.m */,
@@ -1111,6 +1114,7 @@
 				DD000002000000000000DD01 /* GlobalShortcutsTests.swift in Sources */,
 				DD000004000000000000DD01 /* ShortcutRecorderViewTests.swift in Sources */,
 				FF000006000000000000FF01 /* AboutBoxPresenterTests.swift in Sources */,
+				FF000008000000000000FF01 /* XCTestCaseHelpers.swift in Sources */,
 				B09499173A8244AF5AE97A23 /* HostsDataStoreNotificationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -43,7 +43,7 @@ final class ShortcutRecorderViewTests: XCTestCase {
         let view = MASShortcutView()
         view.setAssociatedUserDefaultsKey(key, withTransformerName: MASDictionaryTransformerName)
 
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertNotNil(view.shortcutValue, "View should read shortcut from UserDefaults")
         XCTAssertEqual(view.shortcutValue?.keyCode, Int(kVK_F1))
@@ -63,12 +63,12 @@ final class ShortcutRecorderViewTests: XCTestCase {
 
         let view = MASShortcutView()
         view.setAssociatedUserDefaultsKey(key, withTransformerName: MASDictionaryTransformerName)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
         XCTAssertNotNil(view.shortcutValue, "Precondition: shortcut should be set")
 
         // Clear the shortcut.
         view.shortcutValue = nil
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         // MASShortcutView writes an empty dictionary when cleared (via MASDictionaryTransformer).
         // MASShortcutBinder treats this as "no shortcut" and unregisters the hotkey.

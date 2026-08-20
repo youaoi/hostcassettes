@@ -18,8 +18,8 @@ final class HostsDataStoreNotificationTests: XCTestCase {
             nc.post(name: .hostsNodeNeedsUpdate, object: nil)
         }
 
-        // Drain: observer blocks fire, then the single coalesced async block
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.2))
+        // ノティフィケーションハンドラ（1ホップ）と scheduleRowRefresh の async（1ホップ）をドレイン
+        drainMainQueue(hops: 2)
 
         let increment = store.rowRefreshToken &- before
         XCTAssertEqual(increment, 1,
@@ -43,7 +43,7 @@ final class HostsDataStoreNotificationTests: XCTestCase {
         nc.post(name: .hostsNodeNeedsUpdate, object: nil)
         nc.post(name: .synchronizingStatusChanged, object: nil)
 
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.2))
+        drainMainQueue(hops: 2)
 
         let increment = store.rowRefreshToken &- before
         XCTAssertEqual(increment, 1,
@@ -58,7 +58,7 @@ final class HostsDataStoreNotificationTests: XCTestCase {
         let before = store.rowRefreshToken
 
         nc.post(name: .hostsFileSaved, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.2))
+        drainMainQueue(hops: 2)
 
         XCTAssertEqual(store.rowRefreshToken, before &+ 1)
     }
@@ -73,12 +73,12 @@ final class HostsDataStoreNotificationTests: XCTestCase {
         // First cycle
         nc.post(name: .hostsNodeNeedsUpdate, object: nil)
         nc.post(name: .hostsNodeNeedsUpdate, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue(hops: 2)
 
         // Second cycle
         nc.post(name: .hostsNodeNeedsUpdate, object: nil)
         nc.post(name: .hostsNodeNeedsUpdate, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue(hops: 2)
 
         let increment = store.rowRefreshToken &- before
         XCTAssertEqual(increment, 2,
@@ -99,7 +99,7 @@ final class HostsDataStoreNotificationTests: XCTestCase {
         remote.setEnabled(true)
 
         // Drain any pending events
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         var changeCount = 0
         let cancellable = store.objectWillChange.sink { _ in
@@ -118,7 +118,7 @@ final class HostsDataStoreNotificationTests: XCTestCase {
         nc.post(name: .hostsFileSaved, object: remote)
         nc.post(name: .threadNotBusy, object: nil)
 
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        drainMainQueue(hops: 2)
 
         // With coalescing: row refresh notifications collapse to 1 objectWillChange,
         // plus busy state changes (isBusy = true, isBusy = false) = ~3 total.

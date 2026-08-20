@@ -37,7 +37,7 @@ final class HostsDataStoreTests: XCTestCase {
         store.renamingHosts = nil
 
         nc.post(name: .hostsFileShouldBeRenamed, object: hosts)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertTrue(store.renamingHosts === hosts)
     }
@@ -50,7 +50,7 @@ final class HostsDataStoreTests: XCTestCase {
         store.selectedHosts = nil
 
         nc.post(name: .hostsFileShouldBeSelected, object: hosts)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertTrue(store.selectedHosts === hosts)
     }
@@ -63,7 +63,7 @@ final class HostsDataStoreTests: XCTestCase {
         XCTAssertFalse(store.isBusy, "precondition")
 
         nc.post(name: .threadBusy, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertTrue(store.isBusy)
     }
@@ -73,11 +73,11 @@ final class HostsDataStoreTests: XCTestCase {
         let store = HostsDataStore(notificationCenter: nc)
 
         nc.post(name: .threadBusy, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
         XCTAssertTrue(store.isBusy, "precondition")
 
         nc.post(name: .threadNotBusy, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertFalse(store.isBusy)
     }
@@ -90,7 +90,7 @@ final class HostsDataStoreTests: XCTestCase {
         let before = store.rowRefreshToken
 
         nc.post(name: .hostsNodeNeedsUpdate, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertEqual(store.rowRefreshToken, before &+ 1)
     }
@@ -101,7 +101,7 @@ final class HostsDataStoreTests: XCTestCase {
         let before = store.rowRefreshToken
 
         nc.post(name: .hostsFileSaved, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertEqual(store.rowRefreshToken, before &+ 1)
     }
@@ -112,7 +112,7 @@ final class HostsDataStoreTests: XCTestCase {
         let before = store.rowRefreshToken
 
         nc.post(name: .synchronizingStatusChanged, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertEqual(store.rowRefreshToken, before &+ 1)
     }
@@ -123,7 +123,7 @@ final class HostsDataStoreTests: XCTestCase {
         let before = store.rowRefreshToken
 
         nc.post(name: .hostsFileCreated, object: nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         XCTAssertEqual(store.rowRefreshToken, before)
     }

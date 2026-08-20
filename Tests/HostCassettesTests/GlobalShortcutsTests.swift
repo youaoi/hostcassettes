@@ -62,8 +62,8 @@ final class GlobalShortcutsTests: XCTestCase {
         let encoded = transformer?.reverseTransformedValue(shortcut)
         UserDefaults.standard.set(encoded, forKey: defaultsKey)
 
-        // Give KVO a chance to propagate.
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        // KVO が指定キーにバインドするまで待機する
+        drainMainQueue()
 
         // Verify the monitor registered the shortcut.
         let registered = binder.shortcutMonitor.isShortcutRegistered(shortcut)
@@ -73,6 +73,6 @@ final class GlobalShortcutsTests: XCTestCase {
 
         // Clean up: remove the test shortcut to avoid side effects.
         UserDefaults.standard.removeObject(forKey: defaultsKey)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.05))
+        drainMainQueue()
     }
 }

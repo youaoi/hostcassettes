@@ -26,7 +26,7 @@ final class URLSheetViewTests: XCTestCase {
         panel = nil
         // Drain the run loop so SwiftUI can finish tearing down its view tree
         // (e.g. NetworkStatusObserver KVO) before the next test starts.
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.15))
+        drainMainQueue(hops: 3)
         super.tearDown()
     }
 
@@ -41,7 +41,7 @@ final class URLSheetViewTests: XCTestCase {
         let hc = NSHostingController(rootView: view)
         let p = NSPanel(contentViewController: hc)
         p.makeKeyAndOrderFront(nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.15))
+        drainMainQueue(hops: 3)
         panel = p
         return hc
     }
@@ -117,7 +117,7 @@ final class URLSheetViewTests: XCTestCase {
         )
 
         sendReturn(to: panel!)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.15))
+        drainMainQueue(hops: 3)
 
         XCTAssertEqual(receivedURL?.absoluteString, "https://example.com/hosts")
     }
@@ -130,7 +130,7 @@ final class URLSheetViewTests: XCTestCase {
         )
 
         sendReturn(to: panel!)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.15))
+        drainMainQueue(hops: 3)
 
         XCTAssertEqual(receivedURL?.absoluteString, "http://example.com/hosts")
     }
@@ -142,7 +142,7 @@ final class URLSheetViewTests: XCTestCase {
         _ = makeHostingController(urlText: "", onAdd: { _ in addCalled = true })
 
         sendReturn(to: panel!)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.15))
+        drainMainQueue(hops: 3)
 
         XCTAssertFalse(addCalled, "onAdd must not fire for empty URL")
     }
@@ -153,7 +153,7 @@ final class URLSheetViewTests: XCTestCase {
                                         onAdd: { _ in addCalled = true })
 
         sendReturn(to: panel!)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.15))
+        drainMainQueue(hops: 3)
 
         XCTAssertFalse(addCalled, "onAdd must not fire for non-http(s) URL")
     }

@@ -11,16 +11,16 @@ final class PreferencesPresenterTests: XCTestCase {
 
     override func tearDown() {
         // Close any preferences window opened during the test.
-        // Drain CA transactions first to avoid animation crashes.
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        // CA トランザクションを含む保留中の処理を完了させてからウィンドウを閉じる
+        drainMainQueue(hops: 3)
         if let w = preferencesWindow() { w.close() }
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
         super.tearDown()
     }
 
     func testShowPreferences_createsWindow() {
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.preferencesWindow() != nil }
 
         let w = preferencesWindow()
         XCTAssertNotNil(w, "A preferences window should exist")
@@ -29,13 +29,13 @@ final class PreferencesPresenterTests: XCTestCase {
 
     func testShowPreferences_reusesWindow() {
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.preferencesWindow() != nil }
 
         let first = preferencesWindow()
         XCTAssertNotNil(first)
 
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        drainMainQueue()
 
         let second = preferencesWindow()
         XCTAssertTrue(first === second, "Should reuse the same window instance")
@@ -43,7 +43,7 @@ final class PreferencesPresenterTests: XCTestCase {
 
     func testShowPreferences_hasFiveTabs() {
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.preferencesWindow() != nil }
 
         let tabVC = preferencesWindow()?.contentViewController as? NSTabViewController
         XCTAssertEqual(tabVC?.tabViewItems.count, 5, "Should have 5 preference tabs")
@@ -51,7 +51,7 @@ final class PreferencesPresenterTests: XCTestCase {
 
     func testShowPreferences_tabLabelsMatch() {
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.preferencesWindow() != nil }
 
         let tabVC = preferencesWindow()?.contentViewController as? NSTabViewController
         let labels = tabVC?.tabViewItems.map(\.label)
@@ -63,7 +63,7 @@ final class PreferencesPresenterTests: XCTestCase {
 
     func testShowPreferences_tabsHaveIcons() {
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.preferencesWindow() != nil }
 
         let tabVC = preferencesWindow()?.contentViewController as? NSTabViewController
         XCTAssertNotNil(tabVC)
@@ -76,11 +76,11 @@ final class PreferencesPresenterTests: XCTestCase {
     /// Uses view-based rendering to avoid requiring screen recording permission.
     private func captureTab(index: Int, name: String) throws {
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.preferencesWindow() != nil }
         let w = try XCTUnwrap(preferencesWindow())
         let tabVC = try XCTUnwrap(w.contentViewController as? NSTabViewController)
         tabVC.selectedTabViewItemIndex = index
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        drainMainQueue(hops: 3)
 
         let view = try XCTUnwrap(w.contentView)
         let bitmapRep = try XCTUnwrap(view.bitmapImageRepForCachingDisplay(in: view.bounds))
@@ -98,7 +98,7 @@ final class PreferencesPresenterTests: XCTestCase {
 
     func testShowPreferences_toolbarStyleIsPreference() {
         PreferencesPresenter.showPreferences()
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        waitUntil { self.preferencesWindow() != nil }
 
         let w = preferencesWindow()
         XCTAssertEqual(w?.toolbarStyle, .preference)

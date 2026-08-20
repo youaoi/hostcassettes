@@ -22,8 +22,8 @@ final class URLSheetPresenterTests: XCTestCase {
         // references after close().
         window.isReleasedWhenClosed = false
         window.makeKeyAndOrderFront(nil)
-        // Let the run loop settle so the window becomes key
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.05))
+        // ウィンドウがキーになるまで待機
+        drainMainQueue()
     }
 
     override func tearDown() {
@@ -40,12 +40,8 @@ final class URLSheetPresenterTests: XCTestCase {
             )
             wait(for: [gone], timeout: 3.0)
         }
-        // Flush pending CA transactions and autorelease pools so that
-        // AppKit's _NSWindowTransformAnimation (and its captured blocks) is
-        // fully released while this window is still alive.  Without this,
-        // the animation can be drained in a later test's run-loop iteration,
-        // finding the captured window already freed → EXC_BAD_ACCESS.
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+        // CA トランザクションとアニメーションブロックを完了させてから閉じる
+        drainMainQueue(hops: 3)
         window.close()
         window = nil
         super.tearDown()
@@ -79,7 +75,7 @@ final class URLSheetPresenterTests: XCTestCase {
     /// Passing nil must log a warning and not crash.
     func testPresent_nilWindow_doesNotCrash() {
         URLSheetPresenter.presentInWindow(nil)
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.05))
+        drainMainQueue()
         // No assertion needed — test passes if no crash/exception
     }
 
