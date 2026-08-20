@@ -89,14 +89,8 @@ jobs:
           EXISTING_ITEMS=""
           if git ls-remote --exit-code origin gh-pages; then
             EXISTING_ITEMS=$(curl -fsSL "https://youaoi.github.io/hostcassettes/appcast.xml" \
-              | python3 -c "
-import sys, re
-data = sys.stdin.read()
-items = re.findall(r'<item>.*?</item>', data, re.DOTALL)
-for item in items:
-    if 'youaoi/hostcassettes' in item:
-        print(item)
-" || true)
+              | python3 -c "import sys,re; data=sys.stdin.read(); items=re.findall(r'<item>.*?</item>', data, re.DOTALL); [print(i) for i in items if 'youaoi/hostcassettes' in i]" \
+              || true)
           fi
 
           cat >> appcast/appcast.xml << ITEM_EOF
