@@ -21,7 +21,7 @@
 		<integer>8391424</integer>
 	</dict>
 	<key>overrideExternalModifications</key>
-	<true/>
+	<false/>
 	<key>remoteHostsUpdateInterval</key>
 	<integer>60</integer>
 	<key>showEditWindow</key>

@@ -5,10 +5,20 @@ struct IconPickerView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var searchText = ""
     @State private var selectedIcon: String?
+    @State private var useCustomColor: Bool
+    @State private var selectedColor: Color
 
     init(hosts: Hosts) {
-        self.hostsPath = hosts.path ?? ""
-        self._selectedIcon = State(initialValue: StatusBarIconStore.iconName(forHostsPath: hosts.path ?? ""))
+        let path = hosts.path ?? ""
+        self.hostsPath = path
+        self._selectedIcon = State(initialValue: StatusBarIconStore.iconName(forHostsPath: path))
+        if let nsColor = StatusBarIconStore.iconColor(forHostsPath: path) {
+            self._useCustomColor = State(initialValue: true)
+            self._selectedColor = State(initialValue: Color(nsColor))
+        } else {
+            self._useCustomColor = State(initialValue: false)
+            self._selectedColor = State(initialValue: .accentColor)
+        }
     }
 
     var body: some View {
@@ -21,6 +31,14 @@ struct IconPickerView: View {
             footer
         }
         .frame(width: 640, height: 600)
+        .onAppear {
+            // シートの前面にカラーパネルが表示されるようウィンドウレベルを合わせる
+            NSColorPanel.shared.level = .modalPanel
+        }
+        .onDisappear {
+            NSColorPanel.shared.close()
+            NSColorPanel.shared.level = .floating
+        }
     }
 
     // MARK: - Header
@@ -92,26 +110,43 @@ struct IconPickerView: View {
     // MARK: - Footer
 
     private var footer: some View {
-        HStack {
-            Button(NSLocalizedString("Reset to Default", comment: "Icon picker reset")) {
-                selectedIcon = nil
+        VStack(spacing: 8) {
+            Divider()
+            HStack(spacing: 8) {
+                Toggle(NSLocalizedString("Custom Color:", comment: "Icon picker color toggle"), isOn: $useCustomColor)
+                    .fixedSize()
+                ColorPicker("", selection: $selectedColor, supportsOpacity: false)
+                    .disabled(!useCustomColor)
+                    .frame(width: 44)
+                Spacer()
             }
-            .disabled(selectedIcon == nil)
+            .padding(.horizontal, 16)
+            Divider()
+            HStack {
+                Button(NSLocalizedString("Reset to Default", comment: "Icon picker reset")) {
+                    selectedIcon = nil
+                    useCustomColor = false
+                }
+                .disabled(selectedIcon == nil && !useCustomColor)
 
-            Spacer()
+                Spacer()
 
-            Button(NSLocalizedString("Cancel", comment: "")) {
-                dismiss()
+                Button(NSLocalizedString("Cancel", comment: "")) {
+                    dismiss()
+                }
+                .keyboardShortcut(.cancelAction)
+
+                Button(NSLocalizedString("Apply", comment: "Icon picker apply")) {
+                    StatusBarIconStore.setIconName(selectedIcon, forHostsPath: hostsPath)
+                    let nsColor = useCustomColor ? NSColor(selectedColor) : nil
+                    StatusBarIconStore.setIconColor(nsColor, forHostsPath: hostsPath)
+                    dismiss()
+                }
+                .keyboardShortcut(.defaultAction)
             }
-            .keyboardShortcut(.cancelAction)
-
-            Button(NSLocalizedString("Apply", comment: "Icon picker apply")) {
-                StatusBarIconStore.setIconName(selectedIcon, forHostsPath: hostsPath)
-                dismiss()
-            }
-            .keyboardShortcut(.defaultAction)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
         }
-        .padding(16)
     }
 
     // MARK: - Icon Data

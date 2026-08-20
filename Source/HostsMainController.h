@@ -77,7 +77,12 @@
 	int filesCount;
 }
 
+@property (nonatomic, assign, readonly) BOOL externalModificationPaused;
+
 + (HostsMainController*)defaultInstance;
+
+/** 外部変更による一時停止を解除し、アクティブhostsを再適用する */
+- (void)resumeFromExternalModification;
 
 - (void)load;
 - (BOOL)rename:(Hosts*)hosts to:(NSString*)name;

@@ -46,6 +46,7 @@
 
     // Misc notifications
     #define RestoredHostsFileNotification @"restoredHostsFileNotification"
+    #define ExternalModificationPausedNotification @"externalModificationPausedNotification"
 
 	// Hosts node should be redrawn
 	#define HostsNodeNeedsUpdateNotification @"HostsNodeNeedsUpdateNotification"

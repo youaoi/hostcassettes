@@ -57,6 +57,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateName) name:ActivateFileNotification object:NULL];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateIcon) name:[StatusBarIconStore iconChangedNotification] object:NULL];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateIcon) name:ExternalModificationPausedNotification object:NULL];
 
     if ([Preferences showNameInStatusBar]) {
         [self initTitleInBar];
@@ -78,10 +79,28 @@
 }
 
 -(void)updateIcon {
+    if ([[HostsMainController defaultInstance] externalModificationPaused]) {
+        NSImageSymbolConfiguration *colorConfig = [NSImageSymbolConfiguration
+            configurationWithPaletteColors:@[NSColor.blackColor, NSColor.systemYellowColor]];
+        NSImageSymbolConfiguration *weightConfig = [NSImageSymbolConfiguration
+            configurationWithPointSize:NSFont.systemFontSize weight:NSFontWeightHeavy];
+        NSImageSymbolConfiguration *config = [colorConfig configurationByApplyingConfiguration:weightConfig];
+        NSImage *icon = [[NSImage imageWithSystemSymbolName:@"exclamationmark.circle.fill"
+                                       accessibilityDescription:nil]
+                          imageWithSymbolConfiguration:config];
+        [[statusItem button] setImage:icon];
+        return;
+    }
     NSString *iconName = [StatusBarIconStore iconNameForActiveHosts];
     if (iconName) {
         NSImage *sfImage = [NSImage imageWithSystemSymbolName:iconName accessibilityDescription:nil];
         if (sfImage) {
+            NSColor *iconColor = [StatusBarIconStore iconColorForActiveHosts];
+            if (iconColor) {
+                NSImageSymbolConfiguration *config = [NSImageSymbolConfiguration
+                    configurationWithPaletteColors:@[iconColor]];
+                sfImage = [sfImage imageWithSymbolConfiguration:config];
+            }
             [[statusItem button] setImage:sfImage];
             return;
         }
@@ -120,7 +139,12 @@
 }
 
 -(IBAction)showMenu:(id)sender
-{	
+{
+    if ([[HostsMainController defaultInstance] externalModificationPaused]) {
+        // 一時停止中は認証してアクティブhostsを再適用する
+        [[HostsMainController defaultInstance] resumeFromExternalModification];
+        return;
+    }
 	HostsMenu *menu = [[HostsMenu alloc] initWithExtras];
     [statusItem setMenu:menu];
     [[statusItem button] performClick:nil];

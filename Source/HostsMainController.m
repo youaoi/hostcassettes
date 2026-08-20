@@ -62,6 +62,8 @@
 static VDKQueue* queue = nil;
 static HostsMainController *sharedInstance = nil;
 
+@synthesize externalModificationPaused = _externalModificationPaused;
+
 + (HostsMainController*)defaultInstance
 {
 	return sharedInstance;
@@ -359,6 +361,8 @@ static HostsMainController *sharedInstance = nil;
 {
 	logDebug(@"Activating: \"%@\"", [hosts name]);
     [self stopTrackingFileChanges];
+    // 手動切り替えで一時停止を解除
+    _externalModificationPaused = NO;
 	
 	Hosts *activeHostsFile = [self activeHostsFile];
 	
@@ -370,6 +374,28 @@ static HostsMainController *sharedInstance = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:ActivateFileNotification object:NULL];
 	}
     [self startTrackingFileChanges];
+}
+
+- (void)resumeFromExternalModification
+{
+    Hosts *activeHosts = [self activeHostsFile];
+    if (activeHosts == nil) {
+        _externalModificationPaused = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:ActivateFileNotification object:nil];
+        return;
+    }
+
+    [self stopTrackingFileChanges];
+    NSObject<HostsControllerProtocol> *controller = [self hostsControllerForFile:activeHosts];
+    BOOL success = [controller restoreHostsToOriginalLocation:activeHosts];
+    [self startTrackingFileChanges];
+
+    if (success) {
+        _externalModificationPaused = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:RestoredHostsFileNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ActivateFileNotification object:nil];
+    }
+    // 認証キャンセル等で失敗した場合は一時停止状態を維持する
 }
 
 #pragma mark -
@@ -630,31 +656,36 @@ static HostsMainController *sharedInstance = nil;
     if (!([noteName isEqualToString:VDKQueueDeleteNotification] || ( [noteName isEqualTo:VDKQueueWriteNotification]) )) {
         return;
     }
-    logDebug(@"External application has changed the hosts file, restoring file");
-    
-    if (![Preferences overrideExternalModifications]) {
-        logDebug(@"Restoring not enabled, aborting");
-        return;
-    }
-    
-    Hosts *activeHosts = [self activeHostsFile];
-    if (activeHosts == nil) {
-        logDebug(@"No active hosts file, can't restore");
-        return;
-    }
 
-    [self stopTrackingFileChanges];
-    NSObject<HostsControllerProtocol> *controller = [self hostsControllerForFile:activeHosts];
-	BOOL success = [controller restoreHostsToOriginalLocation:activeHosts];
-    [self startTrackingFileChanges];
+    if ([Preferences overrideExternalModifications]) {
+        logDebug(@"External application has changed the hosts file, restoring file");
 
-    if (!success) {
-        logWarn(@"Failed to restore file");
-        return;
+        Hosts *activeHosts = [self activeHostsFile];
+        if (activeHosts == nil) {
+            logDebug(@"No active hosts file, can't restore");
+            return;
+        }
+
+        [self stopTrackingFileChanges];
+        NSObject<HostsControllerProtocol> *controller = [self hostsControllerForFile:activeHosts];
+        BOOL success = [controller restoreHostsToOriginalLocation:activeHosts];
+        [self startTrackingFileChanges];
+
+        if (!success) {
+            logWarn(@"Failed to restore file");
+            return;
+        }
+
+        [[NSNotificationCenter defaultCenter] postNotificationName:RestoredHostsFileNotification object:nil];
+    } else {
+        // すでに一時停止中なら無視
+        if (_externalModificationPaused) {
+            return;
+        }
+        logDebug(@"External application has changed the hosts file, pausing monitoring");
+        _externalModificationPaused = YES;
+        [[NSNotificationCenter defaultCenter] postNotificationName:ExternalModificationPausedNotification object:nil];
     }
-
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-	[nc postNotificationName:RestoredHostsFileNotification object:nil];
 }
 
 #pragma mark -

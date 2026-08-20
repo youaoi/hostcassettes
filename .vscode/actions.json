@@ -8,18 +8,14 @@
       "cwd": "${workspaceFolder}",
       "confirmBeforeRun": true,
       "description": "Regenerate AppIcon PNG assets from the source SVG.",
-      "commands": [
-        "./update-app-icon.sh"
-      ]
+      "commands": ["./update-app-icon.sh"]
     },
     {
       "section": "Release",
       "name": "package",
       "confirmBeforeRun": true,
       "id": "mo879oke-yfpl219",
-      "commands": [
-        "CONFIGURATION=Release ARCHS=arm64 ./package-release.sh"
-      ]
+      "commands": ["CONFIGURATION=Release ARCHS=arm64 ./package-release.sh"]
     },
     {
       "section": "Debug",
@@ -27,7 +23,7 @@
       "confirmBeforeRun": true,
       "id": "mob6pjvz-pc8s70z",
       "commands": [
-        "xcodebuild -project 'Gas Mask.xcodeproj' -scheme 'Gas Mask' -configuration Debug -destination 'platform=macOS' ARCHS=arm64 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO test"
+        "xcodebuild -project 'Host Cassettes.xcodeproj' -scheme 'Host Cassettes' -configuration Debug -destination 'platform=macOS' ARCHS=arm64 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO test"
       ]
     },
     {
@@ -36,16 +32,10 @@
       "reuseTerminal": true,
       "confirmBeforeRun": true,
       "id": "mochdkxs-m2hxe93",
-      "commands": [
-        "pkill -9 -f \"Gas Mask.app\""
-      ]
+      "commands": ["pkill -9 -f \"Host Cassettes.app\""]
     }
   ],
-  "sections": [
-    "Assets",
-    "Release",
-    "Debug"
-  ],
+  "sections": ["Assets", "Release", "Debug"],
   "commonOnNewTerminalCommand": "source .venv/bin/activate",
   "newTerminalDelaySeconds": 6
 }

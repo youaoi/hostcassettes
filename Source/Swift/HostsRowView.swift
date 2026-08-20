@@ -78,8 +78,9 @@ struct HostsRowView: View {
     @ViewBuilder
     private var fileIcon: some View {
         if let path = hosts.path, let customIcon = StatusBarIconStore.iconName(forHostsPath: path) {
+            let tint: Color = StatusBarIconStore.iconColor(forHostsPath: path).map { Color($0) } ?? .secondary
             Image(systemName: customIcon)
-                .foregroundStyle(hosts.enabled() ? .secondary : .tertiary)
+                .foregroundStyle(tint.opacity(hosts.enabled() ? 1 : 0.5))
         } else if hosts is CombinedHosts {
             Image(systemName: "doc.on.doc")
                 .foregroundStyle(.secondary)

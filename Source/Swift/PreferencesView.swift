@@ -4,7 +4,7 @@ import SwiftUI
 
 struct GeneralTab: View {
     @StateObject private var loginItemObserver = LoginItemObserver()
-    @AppStorage("overrideExternalModifications") private var overrideExternalModifications = true
+    @AppStorage("overrideExternalModifications") private var overrideExternalModifications = false
     @AppStorage("showNameInStatusBar") private var showNameInStatusBar = false
 
     var body: some View {
